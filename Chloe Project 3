@@ -1,0 +1,35 @@
+"""picnic game"""
+import argparse
+
+
+def main():
+    """Main function for the picnic game"""
+    parser = argparse.ArgumentParser(description="Picnic game")
+    parser.add_argument("items",
+                        metavar="str",
+                        type=str,
+                        nargs="+",
+                        help="Item(s) to bring")
+    parser.add_argument("-s",
+                        "--sorted",
+                        action="store_true",
+                        help="Sort the items (default: False)")
+
+    args = parser.parse_args()
+    items = args.items
+
+    if args.sorted:
+        items.sort()
+
+    if len(items) == 1:
+        output = items[0]
+    elif len(items) == 2:
+        output = f"{items[0]} and {items[1]}"
+    else:
+        output = ", ".join(items[:-1]) + f", and {items[-1]}"
+
+    print(f"You are bringing {output}.")
+
+
+if __name__ == "__main__":
+    main()
