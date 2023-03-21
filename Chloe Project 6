@@ -1,0 +1,29 @@
+"""
+This module demonstrates various string formatting techniques
+and randomization methods.
+"""
+
+import math
+import random
+import string
+
+print(f'pi is {math.pi:0.02f}')
+print(f'pi is {math.pi:0.04f}')
+print(f'pi is {math.pi:0.2f}')
+print(f'pi is {math.pi:0.4f}')
+print(f'pi is {math.pi:0.02f}')
+print(f'pi is {math.pi:0.04f}')
+print(f'{"hello":>10}')
+
+rand_int = random.randint(5, 10)
+print(rand_int)
+
+RAND_STR = ''.join(random.choices(string.ascii_letters + string.digits, k=7))
+print(RAND_STR)
+
+RAND_STR2 = ''.join(random.choices(string.ascii_letters + string.digits, k=4))
+print(RAND_STR2)
+
+print("test ".rstrip())
+print(" test ".lstrip())
+print(" test ".strip())
